@@ -1,0 +1,43 @@
+Create Purchase Order Item
+Cancel Subsequent Invoice
+SRM: Ordered
+Record Invoice Receipt
+SRM: Transaction Completed
+Reactivate Purchase Order Item
+SRM: Created
+Remove Payment Block
+Cancel Invoice Receipt
+Vendor creates debit memo
+Change Price
+SRM: In Transfer to Execution Syst.
+Delete Purchase Order Item
+Block Purchase Order Item
+Cancel Goods Receipt
+Receive Order Confirmation
+SRM: Awaiting Approval
+Release Purchase Requisition
+Clear Invoice
+Update Order Confirmation
+Record Goods Receipt
+Change Delivery Indicator
+SRM: Transfer Failed (E.Sys.)
+SRM: Held
+SRM: Document Completed
+Release Purchase Order
+Change Approval for Purchase Order
+Change Storage Location
+Change payment term
+Record Subsequent Invoice
+SRM: Complete
+Change Currency
+Change Quantity
+Change Rejection Indicator
+Record Service Entry Sheet
+SRM: Incomplete
+SRM: Change was Transmitted
+START
+Change Final Invoice Indicator
+Create Purchase Requisition Item
+Set Payment Block
+Vendor creates invoice
+SRM: Deleted

@@ -1,0 +1,117 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000;
+            height: 1000;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "time-out 3", "label": "time-out 3", "level": 0, "shape": "dot"}, {"id": "time-out 2", "label": "time-out 2", "level": 1, "physics": true, "shape": "dot"}, {"id": "get review 1", "label": "get review 1", "level": 1, "physics": true, "shape": "dot"}, {"id": "collect reviews", "label": "collect reviews", "level": 1, "physics": true, "shape": "dot"}, {"id": "time-out 1", "label": "time-out 1", "level": 1, "physics": true, "shape": "dot"}, {"id": "invite additional reviewer", "label": "invite additional reviewer", "level": 1, "physics": true, "shape": "dot"}, {"id": "get review 2", "label": "get review 2", "level": 1, "physics": true, "shape": "dot"}, {"id": "decide", "label": "decide", "level": 1, "physics": true, "shape": "dot"}]);
+        edges = new vis.DataSet([{"arrowStrikethrough": false, "arrows": "to", "from": "time-out 3", "physics": true, "title": 36, "to": "time-out 2", "value": 36}, {"arrowStrikethrough": false, "arrows": "to", "from": "time-out 3", "physics": true, "title": 4, "to": "get review 1", "value": 4}, {"arrowStrikethrough": false, "arrows": "to", "from": "time-out 3", "physics": true, "title": 11, "to": "collect reviews", "value": 11}, {"arrowStrikethrough": false, "arrows": "to", "from": "time-out 3", "physics": true, "title": 9, "to": "time-out 1", "value": 9}, {"arrowStrikethrough": false, "arrows": "to", "from": "time-out 3", "physics": true, "title": 10, "to": "invite additional reviewer", "value": 10}, {"arrowStrikethrough": false, "arrows": "to", "from": "time-out 3", "physics": true, "title": 23, "to": "get review 2", "value": 23}, {"arrowStrikethrough": false, "arrows": "to", "from": "time-out 3", "physics": true, "title": 1, "to": "decide", "value": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -10000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        // default to using dot shape for nodes
+        options.nodes = {
+            shape: "dot"
+        }
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+get review 3
+collect reviews
+get review 1
+invite additional reviewer
+reject
+invite reviewers
+START
+decide
+END
+time-out 2
+time-out 1
+time-out 3
+time-out X
+get review X
+get review 2
+accept
