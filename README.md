@@ -12,9 +12,9 @@ It gets an activity and predicts what is the next activity.
 ## usage
 first of all, you should set up the configuration of the neural network and data. It can be done by modifying train.py's parser or you can directly put argument to it.
 
-* py train.py
+* python train.py
 run the training phase of the neural network
 
-* py sample.py
+* python sample.py
 there are two functions in the sample.py, first is predict without sequence and second is with sequence.
 choose one and call in main
